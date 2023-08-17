@@ -1,0 +1,484 @@
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `backend_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `backend_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (28.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `backend_development`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `backend_test`[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE DATABASE `backend_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE `backend_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-08-17 11:11:28.869998', '2023-08-17 11:11:28.869998')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`))[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230817111327')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (10.3ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (8.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20230817111327'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`))[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230817111327')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE (id = 1) LIMIT 10[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (6.9ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (2.1ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20230817111327'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`))[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230817111327')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('a@bld.ai', '$2a$12$PV8mtYEZR/pGTktdh7albuJp.37CPR29HX.6p1BVBriFL0pazrvJW', '2023-08-17 11:26:12.671185', '2023-08-17 11:26:12.671185')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('b@bld.ai', '$2a$12$oz4RpUL4x/xEGfCkLhVTC.P5TW74qrqM7DpatGCbVdepWj1G5IV/.', '2023-08-17 11:27:04.316662', '2023-08-17 11:27:04.316662')[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (2.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20230817111327'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE `backend_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `backend_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('5073945470573576205', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20230817111327)
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`))[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20230817111327')[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5073945470573576205')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('m@gmail.com', '$2a$12$tnBS4ErhHhO.fxjYx/y3cOcBizUBkV6b0aFEAQfuuxWw1oLaXuazq', '2023-08-17 11:32:14.510961', '2023-08-17 11:32:14.510961')[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (16.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `backend_development`[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `backend_test`[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE `backend_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE `backend_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (29.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`)) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20230817111327)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-08-17 11:32:26.296862', '2023-08-17 11:32:26.296862')[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '491d4351427412f95355ad8e381b3e0ee23f52c4', '2023-08-17 11:32:26.309796', '2023-08-17 11:32:26.309796')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(100) NOT NULL, `password` varchar(100) NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `unique_emails` (`email`)) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20230817111327)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2023-08-17 11:32:26.340215', '2023-08-17 11:32:26.340215')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `ar_internal_metadata`.`value` = 'test', `ar_internal_metadata`.`updated_at` = '2023-08-17 11:32:26.342823' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '491d4351427412f95355ad8e381b3e0ee23f52c4', '2023-08-17 11:32:26.345542', '2023-08-17 11:32:26.345542')[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:38:57 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"a", "user"=>{"email"=>"a"}}
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 5.2ms | Allocations: 10836)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email is too short (minimum is 3 characters), Email is invalid, Password can't be blank, Password is too short (minimum is 8 characters)):
+  
+app/controllers/api/v1/user_controller.rb:6:in `register'
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:39:15 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@qodeex.com", "user"=>{"email"=>"mohamed.hashem@qodeex.com"}}
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms | Allocations: 962)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Password can't be blank, Password is too short (minimum is 8 characters)):
+  
+app/controllers/api/v1/user_controller.rb:6:in `register'
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:40:25 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@qodeex.com', '$2a$12$cVf8uZRf080BRgV1N6N9YuadSOyrk6Rk85sh6uNo.0DpY0O/r0OEy', '2023-08-17 11:40:25.574068', '2023-08-17 11:40:25.574068')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+Completed 201 Created in 268ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 2700)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:41:24 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@qodeex.com', '$2a$12$CYvH5KF0/9HE9mOCvqPHkOWNiblk91SBHCfBdj65l2iUr7nS5.BiG', '2023-08-17 11:41:25.042721', '2023-08-17 11:41:25.042721')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 2.2ms | Allocations: 2082)
+
+
+  
+ActiveRecord::RecordNotUnique (Mysql2::Error: Duplicate entry 'mohamed.hashem@qodeex.com' for key 'users.unique_emails'):
+  
+app/controllers/api/v1/user_controller.rb:6:in `register'
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:45:01 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@qodeex.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 5.7ms | Allocations: 1606)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:45:08 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 490)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:45:23 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 1966)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:45:34 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 1866)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:48:18 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashemcom", "password"=>"[FILTERED]"}}
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 10.4ms | Allocations: 1865)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:48:25 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@bld.com', '$2a$12$l2SHLSWQ2U9kJ6ou9sgwGexA8GuASyoamI84oSIONDEsFvW1kvX1y', '2023-08-17 11:48:26.241040', '2023-08-17 11:48:26.241040')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+Completed 201 Created in 263ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 2203)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:48:30 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mUser Create (5.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@bld.com', '$2a$12$ghIWpg8WA.Ys5oa2cZDVcOtgKN8IHb8aPC0SumdDHe5mTgSasNtT.', '2023-08-17 11:48:30.392555', '2023-08-17 11:48:30.392555')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+Completed 403 Forbidden in 270ms (Views: 0.1ms | ActiveRecord: 6.1ms | Allocations: 2113)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:49:05 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@bld.com', '$2a$12$PzqogRLUQCiCZbr65m3Pd.CS571Lu3dKzJiHNxOVADAFKFmcLuxAO', '2023-08-17 11:49:05.575636', '2023-08-17 11:49:05.575636')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:9:in `register'
+Completed 403 Forbidden in 248ms (Views: 0.1ms | ActiveRecord: 8.0ms | Allocations: 3671)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:50:22 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@bld.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mUser Create (4.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@bld.com', '$2a$12$.AZLeOkr6oncIkMHvxsPtesL4WUu7dSixEtuq4HXdU4Mf.BqWVvK.', '2023-08-17 11:50:23.084845', '2023-08-17 11:50:23.084845')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 11.5ms | Allocations: 3617)
+
+
+  
+ActiveRecord::RecordNotUnique (Mysql2::Error: Duplicate entry 'mohamed.hashem@bld.com' for key 'users.unique_emails'):
+  
+app/controllers/api/v1/user_controller.rb:6:in `register'
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:50:29 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@blda.com', '$2a$12$C07XzamXSukqytGAzTFFru5gPvnXmpb5AaaizH4h7dbNfKXQL6grm', '2023-08-17 11:50:29.881287', '2023-08-17 11:50:29.881287')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `register'
+Completed 204 No Content in 274ms (ActiveRecord: 2.0ms | Allocations: 1910)
+
+
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:51:32 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@blda.com', '$2a$12$YJBQ0lG4MuyndLRws4oSO.CCITxHO8BLVZqbHzoSrkoorfXm2u5na', '2023-08-17 11:51:33.072905', '2023-08-17 11:51:33.072905')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 6.2ms | Allocations: 6020)
+
+
+  
+NameError (undefined local variable or method `e' for #<Api::V1::UserController:0x0000000001f6d0>
+
+    rescue e
+           ^):
+  
+app/controllers/api/v1/user_controller.rb:8:in `rescue in register'
+app/controllers/api/v1/user_controller.rb:5:in `register'
+Started POST "/api/v1/register" for ::1 at 2023-08-17 14:51:47 +0300
+Processing by Api::V1::UserController#register as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password`, `created_at`, `updated_at`) VALUES ('mohamed.hashem@blda.com', '$2a$12$3O0PLWWCMmN7tFEXU8EcP.h8KZPr8/phuo4tNvP6myMSu9Ulf35c2', '2023-08-17 11:51:47.484241', '2023-08-17 11:51:47.484241')[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/user_controller.rb:7:in `register'
+Completed 503 Service Unavailable in 249ms (Views: 0.1ms | ActiveRecord: 11.6ms | Allocations: 3682)
+
+
+Started POST "/api/v1/login" for ::1 at 2023-08-17 14:53:45 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 2.3ms | Allocations: 3861)
+
+
+  
+NoMethodError (undefined method `find!' for User:Class
+Did you mean?  find):
+  
+app/controllers/api/v1/user_controller.rb:3:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 14:53:59 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' AND `users`.`password` = '123456789' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 404 Not Found in 3ms (ActiveRecord: 4.9ms | Allocations: 1780)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with [WHERE `users`.`email` = ? AND `users`.`password` = ?]):
+  
+app/controllers/api/v1/user_controller.rb:3:in `login'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started POST "/api/v1/login" for ::1 at 2023-08-17 14:58:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x00000001051c4868>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 9.3ms | Allocations: 8118)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:20:in `new'
+app/models/user.rb:20:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:4:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 14:58:51 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x000000010567b9d8>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 4.0ms | Allocations: 2323)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:21:in `new'
+app/models/user.rb:21:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:4:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 14:59:32 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x00000001080755e0>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 3.5ms | Allocations: 2276)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:21:in `new'
+app/models/user.rb:21:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:5:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:00:39 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x000000010846c450>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 8.8ms | Allocations: 2274)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:21:in `new'
+app/models/user.rb:21:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:5:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:01:13 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x000000010976e8c8>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 4.5ms | Allocations: 2288)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:20:in `new'
+app/models/user.rb:20:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:5:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:01:27 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x00000001067d58a0>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 204 No Content in 493ms (ActiveRecord: 5.9ms | Allocations: 2277)
+
+
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:01:59 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x00000001080d5990>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 15.9ms | Allocations: 2265)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/models/user.rb:20:in `new'
+app/models/user.rb:20:in `valid_password?'
+app/controllers/api/v1/user_controller.rb:4:in `login'
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:02:16 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x00000001094b78f0>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:3:in `login'
+Completed 200 OK in 251ms (Views: 0.1ms | ActiveRecord: 10.3ms | Allocations: 2404)
+
+
+Started POST "/api/v1/login" for ::1 at 2023-08-17 15:03:57 +0300
+Processing by Api::V1::UserController#login as */*
+  Parameters: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :password. Context: { controller: Api::V1::UserController, action: login, request: #<ActionDispatch::Request:0x0000000109667218>, params: {"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]", "controller"=>"api/v1/user", "action"=>"login", "user"=>{"email"=>"mohamed.hashem@blda.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'mohamed.hashem@blda.com' LIMIT 1[0m
+  ↳ app/controllers/api/v1/user_controller.rb:5:in `login'
+Completed 200 OK in 250ms (Views: 0.9ms | ActiveRecord: 9.8ms | Allocations: 2393)
+
+
